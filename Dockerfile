@@ -5,10 +5,19 @@ LABEL \
   version="v2.4.2" \
   description="Varscan image for use in Workflows"
 
-RUN apt-get update && apt-get install -y \
-  default-jre \
-  wget
-
+RUN apt-get update -y && apt-get install -y \
+    wget \
+    git \
+    unzip \
+    bzip2 \
+    g++ \
+    make \
+    zlib1g-dev \
+    ncurses-dev \
+    rsync \
+    default-jdk \
+    default-jre
+    
 ENV VARSCAN_INSTALL_DIR=/opt/varscan
 
 WORKDIR $VARSCAN_INSTALL_DIR
